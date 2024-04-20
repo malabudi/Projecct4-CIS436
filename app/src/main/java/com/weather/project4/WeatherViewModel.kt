@@ -1,6 +1,7 @@
 package com.weather.project4
 
 import android.app.Application
+import android.os.ConditionVariable
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -24,15 +25,15 @@ data class WeatherData(
     val pressure: Int,
     val humidity: Int,
     val description: String,
-    val icon: String
+    val icon: String,
+    val condition: String
 )
 
 class WeatherViewModel(application: Application) : AndroidViewModel(application)  {
     private val API_KEY: String = "1faa0881d765dafd27f4814945c3a427"
-    private var CITY ="Detroit"
     private val _weatherData = MutableLiveData<WeatherData>()
     val weatherData: LiveData<WeatherData> = _weatherData
-    fun fetchWeather(progressBar: ProgressBar) {
+    fun fetchWeather(city: String, progressBar: ProgressBar) {
         progressBar.visibility = View.VISIBLE
         // Used to add a two second delay to the request to show the progress bar
         val handler = Handler(Looper.getMainLooper())
@@ -41,8 +42,7 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
             val requestQueue =
                 Volley.newRequestQueue(getApplication<Application>().applicationContext)
             val requestUrl =
-                "https://api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$API_KEY"
-
+                "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=$API_KEY"
             val request = StringRequest(Request.Method.GET, requestUrl,
                 { response ->
                     try {
@@ -59,23 +59,26 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
                             pressure = main.getInt("pressure"),
                             humidity = main.getInt("humidity"),
                             description = weather.getString("description"),
-                            icon = weather.getString("icon")
+                            icon = weather.getString("icon"),
+                            condition = weather.getString("main")
                         )
                         // Update the LiveData with the fetched weather data
                         _weatherData.postValue(weatherData)
                         progressBar.visibility = View.INVISIBLE
+                        Log.i("WeatherViewModel key:", "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=$API_KEY")
+
                         Log.i("Weather API Response", resBody.toString())
                     } catch (e: JSONException) {
                         e.printStackTrace()
                     }
                 },
                 {
-                    Log.e("MainViewModel", "Failed to fetch weather")
+                    Log.e("WeatherViewModel", "Failed to fetch weather for $city")
                     progressBar.visibility = View.INVISIBLE
                 }
             )
 
             requestQueue.add(request)
-        }, 400)
+        }, 2000) // m second delay for showing the progress bar
     }
 }
