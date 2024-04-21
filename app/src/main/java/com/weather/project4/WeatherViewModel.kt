@@ -42,7 +42,7 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
             val requestQueue =
                 Volley.newRequestQueue(getApplication<Application>().applicationContext)
             val requestUrl =
-                "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=$API_KEY"
+                "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=$API_KEY&units=imperial"
             val request = StringRequest(Request.Method.GET, requestUrl,
                 { response ->
                     try {
@@ -65,8 +65,8 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
                         // Update the LiveData with the fetched weather data
                         _weatherData.postValue(weatherData)
                         progressBar.visibility = View.INVISIBLE
-                        Log.i("WeatherViewModel key:", "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=$API_KEY")
 
+                        Log.i("WeatherViewModel key:", requestUrl)
                         Log.i("Weather API Response", resBody.toString())
                     } catch (e: JSONException) {
                         e.printStackTrace()
