@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/cityLocationText"
-        android:layout_width="217dp"
+        android:layout_width="362dp"
         android:layout_height="65dp"
         android:text="Location"
         android:textAlignment="center"
@@ -51,6 +51,7 @@
         android:id="@+id/SearchView"
         android:layout_width="215dp"
         android:layout_height="49dp"
+        android:queryHint="Enter City"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
