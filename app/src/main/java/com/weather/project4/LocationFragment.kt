@@ -41,12 +41,12 @@ class LocationFragment : Fragment() {
     ): View? {
         _binding = FragmentLocationBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
+        binding.progressBar.visibility = View.INVISIBLE
 
         binding.SearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {

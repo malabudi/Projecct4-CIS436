@@ -2,6 +2,7 @@ package com.weather.project4
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.weather.project4.databinding.ActivityMainBinding
 
@@ -14,8 +15,8 @@ class MainActivity : AppCompatActivity(), LocationFragment.OnWeatherUpdatedListe
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
+
     override fun onWeatherUpdated(data: WeatherData) {
         val dataFragment = supportFragmentManager.findFragmentById(R.id.dataFragment) as? DataFragment
         Log.i("Weather API Weatherdata", data.toString())
