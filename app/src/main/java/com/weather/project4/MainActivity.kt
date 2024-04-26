@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity(), LocationFragment.OnWeatherUpdatedListe
 
         dataFragment?.updateTemperature(data.temperature)
         dataFragment?.updateDescription(data.description)
-        dataFragment?.updateMinTemp(data.tempMin)
-        dataFragment?.updateMaxTemp(data.tempMax)
+        dataFragment?.updateMinTemp(data.temp_Min)
+        dataFragment?.updateHumidity(data.humidity)
+        dataFragment?.updateMaxTemp(data.temp_Max)
         dataFragment?.updateFeelsLike(data.feelsLike)
 
         // Update UI components or notify other fragments

@@ -7,83 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".DataFragment">
 
+
     <TextView
         android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_width="121dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="124dp"
         android:text="0°F"
         android:textColor="#000000"
         android:textColorHighlight="#0B0A0A"
-        android:textSize="96sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/feelsLike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="176dp"
         android:text="Feels Like "
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temperature" />
 
     <TextView
         android:id="@+id/MinTemp"
         android:layout_width="80dp"
         android:layout_height="52dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="28dp"
         android:textColor="#0B0A0A"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.206" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </LinearLayout>
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/MaxTemp"
-        android:layout_width="94dp"
-        android:layout_height="50dp"
+        android:layout_width="83dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="48dp"
         android:textColor="#100F0F"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintStart_toEndOf="@+id/MinTemp" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="126dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="108dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="224dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:src="@drawable/hightempicon"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/temperature">
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 
@@ -91,44 +74,40 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
         android:text="Weather Condition"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="106dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="18dp"
+        android:layout_width="99dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="236dp"
         android:background="@color/white"
         android:src="@drawable/lowtempicon"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperature">
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="106dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="60dp"
+        android:layout_width="78dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="136dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:src="@drawable/hicone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/temperature">
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 
@@ -136,11 +115,13 @@
         android:id="@+id/humidtv"
         android:layout_width="94dp"
         android:layout_height="44dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="16dp"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MaxTemp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

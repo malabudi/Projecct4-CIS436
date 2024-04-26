@@ -53,15 +53,21 @@ class DataFragment : Fragment() {
     }
 
 
-    fun updateMinTemp(tempMin: Double) {
-        binding.minTemp.text = "Min Temp: ${tempMin.toInt()}°F"
+    fun updateMinTemp(temp_Min: Double) {
+        binding.MinTemp.text = " ${temp_Min.toInt()}°F"
     }
 
-    fun updateMaxTemp(tempMax: Double) {
-        binding.minTemp.text = "Max Temp: ${tempMax.toInt()}°F"
+    fun updateMaxTemp(temp_Max: Double) {
+        binding.MaxTemp.text = " ${temp_Max.toInt()}°F"
+
     }
+
 
     fun updateFeelsLike(feelsLike: Double) {
         binding.feelsLike.text = "Feels Like: ${feelsLike.toInt()}°F"
+    }
+
+    fun updateHumidity(humidity:Int){
+        binding.humidtv.text = " ${humidity}%"
     }
 }

@@ -20,8 +20,8 @@ import org.json.JSONObject
 data class WeatherData(
     val temperature: Double,
     val feelsLike: Double,
-    val tempMin: Double,
-    val tempMax: Double,
+    val temp_Min: Double,
+    val temp_Max: Double,
     val pressure: Int,
     val humidity: Int,
     val description: String,
@@ -54,8 +54,8 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
                         val weatherData = WeatherData(
                             temperature = main.getDouble("temp"),
                             feelsLike = main.getDouble("feels_like"),
-                            tempMin = main.getDouble("temp_min"),
-                            tempMax = main.getDouble("temp_max"),
+                            temp_Min = main.getDouble("temp_min"),
+                            temp_Max = main.getDouble("temp_max"),
                             pressure = main.getInt("pressure"),
                             humidity = main.getInt("humidity"),
                             description = weather.getString("description"),
